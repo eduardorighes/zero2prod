@@ -1,7 +1,7 @@
+use crate::routes::*;
 use actix_web::dev::Server;
 use actix_web::{App, HttpServer, web};
 use std::net::TcpListener;
-use crate::routes::*;
 
 // Notice the different signature!
 // We return `Server` on the happy path, and we dropped the `async` keyword
@@ -12,7 +12,7 @@ pub fn run(listener: TcpListener) -> Result<Server, std::io::Error> {
             .route("/health_check", web::get().to(health_check))
             .route("/subscriptions", web::post().to(subscribe))
     })
-        .listen(listener)?
-        .run();
+    .listen(listener)?
+    .run();
     Ok(server)
 }

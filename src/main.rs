@@ -1,6 +1,6 @@
 use std::net::TcpListener;
-use zero2prod::startup::run;
 use zero2prod::configuration::get_configuration;
+use zero2prod::startup::run;
 
 // or #[tokio::main] will also work
 #[actix_web::main]
