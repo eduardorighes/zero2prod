@@ -1,10 +1,14 @@
 use std::net::TcpListener;
 use zero2prod::startup::run;
+use zero2prod::configuration::get_configuration;
 
 // or #[tokio::main] will also work
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
-    let listener = TcpListener::bind("0.0.0.0:8080").expect("failed to bind random port");
+    // Panic if the app can't read the configuration
+    let configuration = get_configuration().expect("failed to read configuration.");
+    let address = format!("0.0.0.0:{}", configuration.application_port);
+    let listener = TcpListener::bind(address)?;
     // Bubble up the io::Error if we failed to bind the address
     // Otherwise call .await on our Server
     run(listener)?.await

@@ -1,7 +1,6 @@
 use actix_web::dev::Server;
 use actix_web::{App, HttpServer, web};
 use std::net::TcpListener;
-use actix_web::web::route;
 use crate::routes::*;
 
 // Notice the different signature!
