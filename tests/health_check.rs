@@ -87,7 +87,7 @@ async fn subscribe_returns_a_400_when_data_is_missing() {
 fn spawn_app() -> String {
     let listener = TcpListener::bind("0.0.0.0:0").expect("failed to bind random port");
     let port = listener.local_addr().unwrap().port();
-    let server = zero2prod::run(listener).expect("failed to bind address.");
+    let server = zero2prod::startup::run(listener).expect("failed to bind address.");
     // Launch the server as a background task
     // tokio::spawn returns a handle to the spawned future,
     // but we have no use for it here, hence the non-binding let
