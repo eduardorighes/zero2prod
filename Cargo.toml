@@ -19,6 +19,7 @@ sqlx = { version = "0.8.6", default-features = false, features = ["runtime-tokio
 config = "0.15.19"
 uuid = { version = "1.19.0", features = ["v4"] }
 chrono = { version = "0.4.42", default-features = false, features = ["clock"] }
+tracing = "0.1.44"
 
 
 [dev-dependencies]
