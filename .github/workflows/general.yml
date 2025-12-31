@@ -7,9 +7,11 @@ on:
   # These settings allow us to run this specific CI pipeline for PRs against
   # this specific branch (a.k.a. book chapter).
   push:
-    branches: [ $default-branch ]
+    branches:
+      - master
   pull_request:
-    branches: [ $default-branch ]
+    branches:
+      - master
 
 env:
   CARGO_TERM_COLOR: always
