@@ -6,7 +6,7 @@
 // You can inspect what code gets generated using
 // `cargo expand --test health_check` (<- name of the test file)
 
-use sqlx::{Executor, Connection, PgConnection, PgPool};
+use sqlx::{Connection, Executor, PgConnection, PgPool};
 use std::net::TcpListener;
 use uuid::Uuid;
 use zero2prod::configuration::{DatabaseSettings, get_configuration};
