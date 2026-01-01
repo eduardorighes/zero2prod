@@ -13,13 +13,15 @@ name = "zero2prod"
 [dependencies]
 actix-web = "4"
 tokio = { version = "1.48.0", features = ["full"] }
-log = "0.4.29"
 serde = { version = "1.0.228", features = ["derive"] }
 sqlx = { version = "0.8.6", default-features = false, features = ["runtime-tokio-rustls", "macros", "postgres", "uuid", "chrono", "migrate"] }
 config = "0.15.19"
 uuid = { version = "1.19.0", features = ["v4"] }
 chrono = { version = "0.4.42", default-features = false, features = ["clock"] }
-tracing = "0.1.44"
+tracing = { version = "0.1.44", features = ["log"] }
+tracing-subscriber = { version = "0.3", features = ["registry", "env-filter"] }
+tracing-bunyan-formatter = "0.3"
+tracing-log = "0.2"
 
 
 [dev-dependencies]
